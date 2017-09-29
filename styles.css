@@ -9,6 +9,8 @@ body {
 
 #car {
   position: relative;
+  top: 0;
+  left: 0;
   height: calc(775px * 0.1);
   width: calc(1240px * 0.1);
 }

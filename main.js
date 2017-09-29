@@ -14,6 +14,8 @@ class Car {
     this.speed = speed
     this.location = location
     this.element = element
+    this.yVal = this.element.style.top
+    this.xVal = this.element.style.left
   }
 
   turn(direction) {
@@ -27,16 +29,16 @@ class Car {
   move() {
     switch (this.direction) {
       case 'North':
-        this.location[1] += this.speed
+        this.yVal = parseInt(this.yVal) + this.speed + 'px'
         break
       case 'East':
-        this.location[0] += this.speed
+        this.xVal = parseInt(this.xVal) + this.speed + 'px'
         break
       case 'South':
-        this.location[1] -= this.speed
+        this.yVal = parseInt(this.yVal) - this.speed + 'px'
         break
       case 'West':
-        this.location[0] -= this.speed
+        this.xVal = parseInt(this.xVal) - this.speed + 'px'
     }
   }
 
