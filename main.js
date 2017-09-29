@@ -17,7 +17,7 @@ class Car {
     this.element = element
     this.yVal = this.element.style.top
     this.xVal = this.element.style.left
-    // const intervalId = null
+    this.intervalId = null
   }
 
   turn(direction) {
@@ -49,7 +49,7 @@ class Car {
   }
 
   static start(car) {
-    setInterval(() => car.move(), 16)
+    this.intervalId = setInterval(() => car.move(), 16)
   }
 }
 
