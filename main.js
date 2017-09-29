@@ -5,6 +5,7 @@ function renderCar(image) {
   const $car = document.createElement('img')
   $car.setAttribute('src', 'images/car.jpg')
   $car.setAttribute('id', 'car')
+  $car.setAttribute('style', 'top: 0px; left: 0px')
   return $car
 }
 
@@ -29,16 +30,20 @@ class Car {
   move() {
     switch (this.direction) {
       case 'North':
-        this.yVal = parseInt(this.yVal) - this.speed + 'px'
+        this.yVal = parseInt(this.yVal, 10) - this.speed + 'px'
+        this.element.style.top = this.yVal
         break
       case 'East':
-        this.xVal = parseInt(this.xVal) + this.speed + 'px'
+        this.xVal = parseInt(this.xVal, 10) + this.speed + 'px'
+        this.element.style.left = this.xVal
         break
       case 'South':
-        this.yVal = parseInt(this.yVal) + this.speed + 'px'
+        this.yVal = parseInt(this.yVal, 10) + this.speed + 'px'
+        this.element.style.left = this.xVal
         break
       case 'West':
-        this.xVal = parseInt(this.xVal) - this.speed + 'px'
+        this.xVal = parseInt(this.xVal, 10) - this.speed + 'px'
+        this.element.style.top = this.yVal
     }
   }
 
