@@ -1,0 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#car {
+  height: calc(775px * 0.1);
+  width: calc(1240px * 0.1);
+}
