@@ -17,6 +17,7 @@ class Car {
     this.element = element
     this.yVal = this.element.style.top
     this.xVal = this.element.style.left
+    // const intervalId = null
   }
 
   turn(direction) {
