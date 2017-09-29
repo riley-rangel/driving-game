@@ -4,6 +4,6 @@
 }
 
 #car {
-  height: 50px;
-  width: 50px;
+  height: calc(775px * 0.1);
+  width: calc(1240px * 0.1);
 }
