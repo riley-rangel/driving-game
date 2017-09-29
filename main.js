@@ -56,3 +56,10 @@ const $car = document.querySelector('#car')
 const playerCar = new Car($car, 'East', 0, [0, 0])
 
 $track.addEventListener('click', () => Car.start(playerCar))
+
+document.addEventListener('keydown', () => {
+  if (event.key !== 'ArrowRight') {
+    return
+  }
+  playerCar.accelerate(1)
+})
