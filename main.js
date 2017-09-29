@@ -51,6 +51,11 @@ class Car {
   static start(car) {
     this.intervalId = setInterval(() => car.move(), 16)
   }
+
+  static stop(car) {
+    clearInterval(this.intervalId)
+    car.speed = 0
+  }
 }
 
 const $car = document.querySelector('#car')
