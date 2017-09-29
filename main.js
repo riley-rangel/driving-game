@@ -40,11 +40,11 @@ class Car {
         break
       case 'South':
         this.yVal = parseInt(this.yVal, 10) + this.speed + 'px'
-        this.element.style.left = this.xVal
+        this.element.style.left = this.yVal
         break
       case 'West':
         this.xVal = parseInt(this.xVal, 10) - this.speed + 'px'
-        this.element.style.top = this.yVal
+        this.element.style.top = this.xVal
     }
   }
 
@@ -64,10 +64,23 @@ const playerCar = new Car($car, 'East', 0, [0, 0])
 document.addEventListener('keydown', () => Car.start(playerCar))
 
 document.addEventListener('keydown', () => {
-  if (event.key !== 'ArrowRight') {
-    return
+  const key = event.keyCode
+  if (key === 37 || key === 38 || key === 39 || key === 40) {
+    switch (key) {
+      case 37:
+        playerCar.direction = 'West'
+        break
+      case 38:
+        playerCar.direction = 'North'
+        break
+      case 39:
+        playerCar.direction = 'East'
+        break
+      case 40:
+        playerCar.direction = 'South'
+        break
+    }
   }
-  playerCar.accelerate(1)
 })
 
 document.addEventListener('keydown', () => {
