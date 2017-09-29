@@ -7,3 +7,9 @@ function renderCar(image) {
   $car.setAttribute('id', 'car')
   return $car
 }
+
+/*
+class Car {
+
+}
+*/
