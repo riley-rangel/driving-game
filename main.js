@@ -1,4 +1,3 @@
-// issue-1
 const $track = document.querySelector('#track')
 $track.appendChild(renderCar('images/car.jpg'))
 
@@ -9,12 +8,12 @@ function renderCar(image) {
   return $car
 }
 
-// issue-2
 class Car {
-  constructor(direction, speed, location) {
+  constructor(element, direction, speed, location) {
     this.direction = direction
     this.speed = speed
     this.location = location
+    this.element = element
   }
 
   turn(direction) {
