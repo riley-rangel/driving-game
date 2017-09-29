@@ -29,13 +29,13 @@ class Car {
   move() {
     switch (this.direction) {
       case 'North':
-        this.yVal = parseInt(this.yVal) + this.speed + 'px'
+        this.yVal = parseInt(this.yVal) - this.speed + 'px'
         break
       case 'East':
         this.xVal = parseInt(this.xVal) + this.speed + 'px'
         break
       case 'South':
-        this.yVal = parseInt(this.yVal) - this.speed + 'px'
+        this.yVal = parseInt(this.yVal) + this.speed + 'px'
         break
       case 'West':
         this.xVal = parseInt(this.xVal) - this.speed + 'px'
@@ -47,6 +47,7 @@ class Car {
   }
 }
 
-const playerCar = new Car('East', 0, [0, 0])
+const $car = document.querySelector('#car')
+const playerCar = new Car($car, 'East', 0, [0, 0])
 
 $track.addEventListener('click', () => Car.start(playerCar))
