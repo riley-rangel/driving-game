@@ -34,25 +34,29 @@ class Car {
       case 'North':
         this.yVal = parseInt(this.yVal, 10) - this.speed + 'px'
         this.element.style.top = this.yVal
+        this.element.style.transform = 'rotate(-90deg)'
         break
       case 'East':
         this.xVal = parseInt(this.xVal, 10) + this.speed + 'px'
         this.element.style.left = this.xVal
+        this.element.style.transform = 'rotate(0deg)'
         break
       case 'South':
         this.yVal = parseInt(this.yVal, 10) + this.speed + 'px'
         this.element.style.top = this.yVal
+        this.element.style.transform = 'rotate(90deg)'
         break
       case 'West':
         this.xVal = parseInt(this.xVal, 10) - this.speed + 'px'
         this.element.style.left = this.xVal
+        this.element.style.transform = 'rotate(180deg)'
     }
   }
 
   static start(car) {
     if (car.power === 'off') {
       car.power = 'on'
-      car.speed = 1
+      car.speed = 5
       car.intervalId = setInterval(() => car.move(), 16)
     }
   }
@@ -79,16 +83,16 @@ document.addEventListener('keydown', () => {
   if (key === 37 || key === 38 || key === 39 || key === 40) {
     switch (key) {
       case 37:
-        playerCar.direction = 'West'
+        playerCar.turn('West')
         break
       case 38:
-        playerCar.direction = 'North'
+        playerCar.turn('North')
         break
       case 39:
-        playerCar.direction = 'East'
+        playerCar.turn('East')
         break
       case 40:
-        playerCar.direction = 'South'
+        playerCar.turn('South')
         break
     }
   }
