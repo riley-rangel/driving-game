@@ -48,4 +48,4 @@ class Car {
 
 const playerCar = new Car('East', 0, [0, 0])
 
-console.log(playerCar)
+$track.addEventListener('click', () => Car.start(playerCar))
