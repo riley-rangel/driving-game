@@ -41,28 +41,38 @@ class Car {
         break
       case 'South':
         this.yVal = parseInt(this.yVal, 10) + this.speed + 'px'
-        this.element.style.left = this.yVal
+        this.element.style.top = this.yVal
         break
       case 'West':
         this.xVal = parseInt(this.xVal, 10) - this.speed + 'px'
-        this.element.style.top = this.xVal
+        this.element.style.left = this.xVal
     }
   }
 
   static start(car) {
-    this.intervalId = setInterval(() => car.move(), 16)
+    if (car.power === 'off') {
+      car.power = 'on'
+      car.speed = 1
+      car.intervalId = setInterval(() => car.move(), 16)
+    }
   }
 
   static stop(car) {
-    clearInterval(this.intervalId)
-    car.speed = 0
+    if (car.power === 'on') {
+      car.power = 'off'
+      clearInterval(car.intervalId)
+      car.speed = 0
+    }
   }
 }
 
 const $car = document.querySelector('#car')
 const playerCar = new Car($car, 'East', 0, [0, 0])
 
-document.addEventListener('keydown', () => Car.start(playerCar))
+document.addEventListener('keydown', () => {
+  console.log('test')
+  Car.start(playerCar)
+})
 
 document.addEventListener('keydown', () => {
   const key = event.keyCode
