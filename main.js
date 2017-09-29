@@ -1,3 +1,4 @@
+// issue-1
 const $track = document.querySelector('#track')
 $track.appendChild(renderCar('images/car.jpg'))
 
@@ -8,6 +9,7 @@ function renderCar(image) {
   return $car
 }
 
+// issue-2
 class Car {
   constructor(direction, speed, location) {
     this.direction = direction
@@ -40,8 +42,10 @@ class Car {
   }
 
   static start(car) {
-    setInterval(car.move(), 16)
+    setInterval(() => car.move(), 16)
   }
 }
 
-console.log(Car)
+const playerCar = new Car('East', 0, [0, 0])
+
+console.log(playerCar)
