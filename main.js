@@ -18,6 +18,7 @@ class Car {
     this.yVal = this.element.style.top
     this.xVal = this.element.style.left
     this.intervalId = null
+    this.power = 'off'
   }
 
   turn(direction) {
