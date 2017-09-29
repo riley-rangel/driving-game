@@ -8,8 +8,12 @@ function renderCar(image) {
   return $car
 }
 
-/*
 class Car {
-
+  constructor(direction, speed, location) {
+    this.direction = direction
+    this.speed = speed
+    this.location = location
+  }
 }
-*/
+
+console.log(Car)
